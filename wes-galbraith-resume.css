@@ -1,0 +1,51 @@
+* {
+  border : dashed 1px;
+}
+
+#name {
+  text-align : center;
+  margin: auto;
+  width : 50%;
+}
+
+#resume-title {
+  font-size: 30pt;
+  font-weight: bold;
+  margin : auto;
+  text-align: center;
+}
+
+.header {
+  width : 50%;
+  border-bottom : solid 2px;
+  padding-top : 20px;
+  padding-bottom : 10px;
+}
+
+.contact-col-content {
+  width : 66%;
+  margin : auto;
+}
+
+.section {
+  border-bottom : solid 2px;
+  padding :10px 0px 10px 0px;
+}
+
+.section-title {
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+.sub-section-title {
+  font-size: 20pt;
+  text-decoration: underline;
+}
+
+a {
+  color: black;
+}
+
+@media print, screen {
+  body { font-size: 10pt; }
+}
