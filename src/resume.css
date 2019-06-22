@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Lora";
+  src: local("/.fonts/Lora-Regular.ttf");
+}
+
+@page {
+  size: A3;
+  margin: 1cm;
+}
+
+
+h1, h2, h3 {
+  font-family: 'Lora', serif;
+}

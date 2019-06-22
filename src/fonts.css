@@ -1,0 +1,9 @@
+
+        @font-face {
+            font-family: 'Lora';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('/root/.fonts/Lora-Regular.ttf');
+        }
+        

@@ -9,8 +9,8 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt \
     && rm requirements.txt
 
+COPY fonts /root/.fonts
+
 COPY src /src
 
-WORKDIR /src
-
-CMD python build.py
+CMD /bin/ash
