@@ -1,2 +1,3 @@
 WeasyPrint
 requests
+jinja2

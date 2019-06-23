@@ -64,10 +64,11 @@ class FontFace:
 def get_lora(target_dir='/root/.fonts'):
     lora = FontFace.from_name('Lora')
     lora.to_ttf()
+    make_fonts_css('Lora')
     print(str(lora))
 
 
-def make_fonts_css(*font_names, target='./fonts.css'):
+def make_fonts_css(*font_names, target='./css/fonts.css'):
     css = open(target, 'w')
     for name in font_names:
         font_face = FontFace.from_name(name)
@@ -75,7 +76,5 @@ def make_fonts_css(*font_names, target='./fonts.css'):
     css.close()
 
 
-
 if __name__ == '__main__':
-    # get_lora()
-    make_fonts_css('Lora')
+    get_lora()
