@@ -1,36 +1,72 @@
 from functools import partial
+import json
 import os
 
 from jinja2 import Environment, FunctionLoader, select_autoescape
 from weasyprint import HTML, CSS
 from weasyprint.fonts import FontConfiguration
 
+from components.head import Head
+from components.resume import Resume
+import fonts
 
-font_config = FontConfiguration()
+# parse config file
+def parse_config(file="config.json"):
+    with open(file, 'r') as f:
+        config = json.loads(f.read())
 
-def load_template(name, html_path='./html'):
-    if name in (f for f in os.listdir(html_path)):
-        return open(os.path.join(html_path, name)).read()
-    return None
+    resume = config.get('resume')
+    head = resume.get('head')
+    head = Head('head.html', **head)
 
-# jinja2 environment
-env = Environment(
-    loader=FunctionLoader(partial(load_template, html_path='./html')),
-    autoescape=select_autoescape(['html', 'xml'])
-)
+    experience = None
 
-# render jinja2 template
-template = env.get_template('resume.html')
-html = HTML(string=template.render(subtitle='Software Developer'))
+    skills = None
+
+    projects = None
+
+    education = None
+
+    awards = None
+
+    return Resume(head, experience, skills, projects, education, awards)
+
+
+def get_html(resume, html_path='./html'):
+
+    def load_template(name):
+        if name in (f for f in os.listdir(html_path)):
+            return open(os.path.join(html_path, name)).read()
+        return None
+
+    # jinja2 environment
+    env = Environment(
+        loader=FunctionLoader(load_template),
+        autoescape=select_autoescape(['html', 'xml'])
+    )
+
+    # render jinja2 template
+    template = env.get_template('resume.html')
+    return HTML(string=template.render(resume=resume))
+
 
 # css stylesheets
-stylesheets = []
-css_path = './css'
-for f in os.listdir(css_path):
-    filename = os.path.join(css_path, f)
-    if os.path.isfile(filename):
-        css = CSS(filename=filename, font_config=font_config)
-        stylesheets.append(css)
+def get_stylesheets(font_config, css_path='./css'):
+    stylesheets = []
+    for f in os.listdir(css_path):
+        filename = os.path.join(css_path, f)
+        if os.path.isfile(filename):
+            css = CSS(filename=filename, font_config=font_config)
+            stylesheets.append(css)
+    return stylesheets
 
-html.write_pdf('./build/resume.pdf', stylesheets=stylesheets,
-               font_config=font_config)
+
+def main(config='config.json', build='./build/resume.pdf'):
+    font_config = FontConfiguration()
+    resume = parse_config(config)
+    html = get_html(resume)
+    stylesheets = get_stylesheets(font_config)
+    html.write_pdf(build, stylesheets=stylesheets, font_config=font_config)
+
+if __name__ == '__main__':
+    main()

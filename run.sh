@@ -1,6 +1,7 @@
 #!/bin/bash
 docker container run -it --rm \
+  -v $(pwd)/src/build:/src/build \
   --name resume \
-  -v $(pwd)/src:/src \
-  resume:latest
-  /bin/ash
+  resume:latest;
+
+gnome-open ./src/build/resume.pdf

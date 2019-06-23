@@ -1,3 +1,39 @@
-<h1>Wes Galbraith</h1>
+<body>
 
-<h2>{{ subtitle }}</h2>
+ <header>
+  {% if resume.head %}
+   {{ resume.head.render()|safe }}
+  {% endif %}
+ </header>
+
+ <section id="experience">
+  {% if resume.experience %}
+   {{ resume.experience.render()|safe }}
+  {% endif %}
+ </section>
+
+ <section id="skills">
+  {% if resume.skills %}
+   {{ resume.skills.render()|safe }}
+  {% endif %}
+ </section>
+
+ <section id="projects">
+  {% if resume.projects %}
+   {{ resume.projects.render()|safe }}
+  {% endif %}
+ </section>
+
+ <section id="education">
+  {% if resume.education %}
+   {{ resume.education.render()|safe }}
+  {% endif %}
+ </section>
+
+<section id="awards">
+  {% if resume.awards %}
+   {{ resume.awards.render()|safe }}
+  {% endif %}
+</section>
+
+</body>

@@ -1,3 +1,4 @@
+import json
 import os
 import re
 
@@ -60,12 +61,10 @@ class FontFace:
         with open(self.local_font, 'wb') as f:
             f.write(resp.content)
 
-
-def get_lora(target_dir='/root/.fonts'):
-    lora = FontFace.from_name('Lora')
-    lora.to_ttf()
-    make_fonts_css('Lora')
-    print(str(lora))
+def add_font(font):
+    font_face = FontFace.from_name(font)
+    font_face.to_ttf()
+    print(str(font_face))
 
 
 def make_fonts_css(*font_names, target='./css/fonts.css'):
@@ -75,6 +74,17 @@ def make_fonts_css(*font_names, target='./css/fonts.css'):
         css.write(str(font_face))
     css.close()
 
+def parse_config(file):
+    with open(file, 'r') as f:
+        config = json.loads(f.read())
+    fonts = config.get('fonts')
+    return fonts
+
+def main(config_file='config.json'):
+    fonts = parse_config(config_file)
+    for font in fonts:
+        add_font(font)
+    make_fonts_css(*fonts)
 
 if __name__ == '__main__':
-    get_lora()
+    main()
