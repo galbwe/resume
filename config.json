@@ -1,0 +1,123 @@
+{
+  "resume": {
+    "head": {
+      "name": "Wes Galbraith",
+      "title": "Software Engineer",
+      "email": "galbwe92@gmail.com",
+      "phone": "201-906-5244",
+      "address": "Overland Park, KS",
+      "github_account": "galbwe",
+      "github_link": "https://github.com/galbwe",
+      "linkedin_account": "Wes Galbraith",
+      "linkedin_link": "https://www.linkedin.com/in/wes-galbraith-478407135/",
+      "twitter_handle": "@wes_galbraith",
+      "twitter_link": "https://twitter.com/wes_galbraith"
+    },
+    "skills": [
+      "python",
+      "flask",
+      "docker",
+      "pytest",
+      "sql",
+      "sqlalchemy",
+      "postgres",
+      "sqlserver"
+      "pandas",
+      "matplotlib",
+      "bash",
+      "*nix",
+      "html",
+      "css",
+      "git",
+      "github",
+      "atom",
+      "latex",
+      "math",
+      "statistics",
+      "algorithms and data structures",
+      "physics",
+      "teaching",
+      "bass guitar",
+      "the ability to remain calm in the face of mounting pressue"
+    ],
+    "work experience": [
+      {
+        "title": "Backend Developer",
+        "company": "Black & Veatch",
+        "location": "Overland Park, KS",
+        "start_date": "1/2019",
+        "end_date": "present",
+        "detail": [
+          "Developed and maintained api, etl pipelines, and background processes for GeoTRAK",
+          "Introduced the pytest framework to the codebase",
+          "Developed and deployed a geocoding process",
+          "Designed jinja2 templates for pdf reports",
+          "Wrote humane code reviews for colleagues."
+        ]
+      },
+      {
+        "title": "Data Analyst",
+        "company": "TNR Technical",
+        "location": "Sanford, FL (remote)",
+        "start_date": "3/2018",
+        "end_date": "9/2018",
+        "detail": [
+          "Identified sales leads by scraping HTML pages with scrapy and beautiful soup.",
+          "Produced plots and data summarizations with pandas and matplotlib.",
+          "Created a finite state markov decision model to optimize inventory restocking policies."
+        ]
+      },
+      {
+        "title": "Graduate Teaching Assistant",
+        "company": "Colorado State University",
+        "location": "Fort Collins, CO",
+        "start_date": "8/2014",
+        "end_date": "12/2017",
+        "detail": [
+          "Delivered calculus lectures to classes of 25-35 undergraduates",
+          "Prepared quizzes and assignments with latex, numpy, and matplotlib",
+          "Graded homework assignments, quizzes, and exams.",
+          "Helped students on an individual basis during office hours."
+        ]
+      }
+    ],
+    "Volunteer Projects": [
+      {
+        "organization": "Metropolitan Energy Center",
+        "project": "Mapping Energy Efficiency and Public Health Outcomes (MEEP)",
+        "tech_stack": ["Flask", "React", "Docker", "Postgres"],
+        "github_repositories": [
+          "https://github.com/codeforkansascity/meep",
+          "https://github.com/codeforkansascity/meep-backend"
+        ],
+        "location": "Kansas City, MO",
+        "start_date": "1/2019",
+        "end_date": "Present",
+        "detail": [
+          "Developed flask api, docker images, and database schema.",
+          "Cleaned application data with pandas.",
+          "Developed and styled ProximitySlider React Component."
+          "Managed github repositories",
+          "Reviewed pull requests"
+        ]
+      }
+    ]
+    "Education": [
+      {
+        "degree": "M.S. Mathematics",
+        "school": "Colorado State University",
+        "gpa": "3.9",
+        "graduation_date": "12/2017"
+      },
+      {
+        "degree": "B.A. Mathematics",
+        "school": "Gettysburg College",
+        "gpa": "4.0",
+        "graduation_date": "12/2017"
+      }
+    ]
+  },
+  "fonts": [
+    "Lato"
+  ]
+}
