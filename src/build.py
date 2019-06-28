@@ -8,6 +8,7 @@ from weasyprint.fonts import FontConfiguration
 
 from components.head import Head
 from components.resume import Resume
+from components.experience import ExperienceSection, Job
 import fonts
 
 # parse config file
@@ -18,8 +19,12 @@ def parse_config(file="config.json"):
     resume = config.get('resume')
     head = resume.get('head')
     head = Head('head.html', **head)
-
-    experience = None
+    experience = resume.get('work experience')
+    breakpoint()
+    experience = ExperienceSection(
+        'experience.html',
+        [Job('job.html', **job) for job in experience]
+    )
 
     skills = None
 
@@ -47,6 +52,7 @@ def get_html(resume, html_path='./html'):
 
     # render jinja2 template
     template = env.get_template('resume.html')
+    breakpoint()
     return HTML(string=template.render(resume=resume))
 
 

@@ -1,0 +1,17 @@
+<div class="job">
+ <header>
+   <h3>{{ title }}</h3>
+   <article class="company">{{ company }}</article>
+   <article class="location">{{ location }}</article>
+   <article>{{ start_date }}-{{ end_date }}</article>
+ </header>
+ <section>
+  {% for detail in details %}
+    <article class="detail">
+     <p>{{ detail }}</p>
+    </article>
+  {% endfor %}
+ </section>
+
+
+</div>

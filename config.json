@@ -21,7 +21,7 @@
       "sql",
       "sqlalchemy",
       "postgres",
-      "sqlserver"
+      "sqlserver",
       "pandas",
       "matplotlib",
       "bash",
@@ -47,7 +47,7 @@
         "location": "Overland Park, KS",
         "start_date": "1/2019",
         "end_date": "present",
-        "detail": [
+        "details": [
           "Developed and maintained api, etl pipelines, and background processes for GeoTRAK",
           "Introduced the pytest framework to the codebase",
           "Developed and deployed a geocoding process",
@@ -61,7 +61,7 @@
         "location": "Sanford, FL (remote)",
         "start_date": "3/2018",
         "end_date": "9/2018",
-        "detail": [
+        "details": [
           "Identified sales leads by scraping HTML pages with scrapy and beautiful soup.",
           "Produced plots and data summarizations with pandas and matplotlib.",
           "Created a finite state markov decision model to optimize inventory restocking policies."
@@ -73,7 +73,7 @@
         "location": "Fort Collins, CO",
         "start_date": "8/2014",
         "end_date": "12/2017",
-        "detail": [
+        "details": [
           "Delivered calculus lectures to classes of 25-35 undergraduates",
           "Prepared quizzes and assignments with latex, numpy, and matplotlib",
           "Graded homework assignments, quizzes, and exams.",
@@ -93,15 +93,15 @@
         "location": "Kansas City, MO",
         "start_date": "1/2019",
         "end_date": "Present",
-        "detail": [
+        "details": [
           "Developed flask api, docker images, and database schema.",
           "Cleaned application data with pandas.",
-          "Developed and styled ProximitySlider React Component."
+          "Developed and styled ProximitySlider React Component.",
           "Managed github repositories",
           "Reviewed pull requests"
         ]
       }
-    ]
+    ],
     "Education": [
       {
         "degree": "M.S. Mathematics",
@@ -115,6 +115,9 @@
         "gpa": "4.0",
         "graduation_date": "12/2017"
       }
+    ],
+    "Awards & Recognition": [
+
     ]
   },
   "fonts": [

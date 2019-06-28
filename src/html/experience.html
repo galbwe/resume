@@ -1,0 +1,4 @@
+<h2>Work Experience</h2>
+{% for job in jobs %}
+ {{ job.render()|safe }}
+{% endfor %}
