@@ -9,6 +9,12 @@ from weasyprint.fonts import FontConfiguration
 from components.head import Head
 from components.resume import Resume
 from components.experience import ExperienceSection, Job
+from components.skills import Skills
+from components.projects import ProjectsSection, Project
+from components.awards import AwardsSection
+from components.education import EducationSection, Degree
+from components.awards import Award, AwardsSection
+
 import fonts
 
 # parse config file
@@ -20,19 +26,30 @@ def parse_config(file="config.json"):
     head = resume.get('head')
     head = Head('head.html', **head)
     experience = resume.get('work experience')
-    breakpoint()
     experience = ExperienceSection(
         'experience.html',
         [Job('job.html', **job) for job in experience]
     )
+    skills = resume.get('skills')
+    skills = Skills('skills.html', skills)
 
-    skills = None
+    projects = resume.get('Volunteer Projects')
+    projects = ProjectsSection(
+        'projects_section.html',
+        [Project('project.html', **project) for project in projects]
+    )
 
-    projects = None
+    education = resume.get('Education')
+    education = EducationSection(
+        'education.html',
+        [Degree('degree.html', **degree) for degree in education]
+    )
 
-    education = None
-
-    awards = None
+    awards = resume.get('awards')
+    awards = AwardsSection(
+        'awards_section.html',
+        [Award('award.html', **award) for award in awards]
+    )
 
     return Resume(head, experience, skills, projects, education, awards)
 
@@ -52,7 +69,6 @@ def get_html(resume, html_path='./html'):
 
     # render jinja2 template
     template = env.get_template('resume.html')
-    breakpoint()
     return HTML(string=template.render(resume=resume))
 
 

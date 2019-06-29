@@ -1,0 +1,4 @@
+<h2>Volunteer Projects</h2>
+{% for project in projects %}
+ {{ project.render()|safe }}
+{% endfor %}

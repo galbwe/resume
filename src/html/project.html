@@ -1,0 +1,33 @@
+<div class="project">
+ <header>
+   <h3>{{ project }}</h3>
+   <article class="organization">{{ organization }}</article>
+   <article class="location">{{ location }}</article>
+   <article>{{ start_date }}-{{ end_date }}</article>
+   <article class="tech_stack">
+    <h4>Technologies</h4>
+    <ul>
+     {% for tech in tech_stack %}
+       <li>{{ tech }}</li>
+     {% endfor %}
+    </ul>
+   </article>
+   <article class="github_repositories">
+    <h4>Github Repositories</h4>
+    <ul>
+     {% for repo in github_repositories %}
+       <li><a href="{{ repo.get('href') }}">{{ repo.get('name') }}</a></li>
+     {% endfor %}
+    </ul>
+   </article>
+ </header>
+ <section>
+  {% for detail in details %}
+    <article class="detail">
+     <p>{{ detail }}</p>
+    </article>
+  {% endfor %}
+ </section>
+
+
+</div>

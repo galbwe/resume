@@ -27,7 +27,6 @@ class FontFace:
         return f"{class_name}({args})"
 
     def __str__(self):
-        # breakpoint()
         return """
         @font-face {{
             font-family: '{self.family}';

@@ -87,8 +87,14 @@
         "project": "Mapping Energy Efficiency and Public Health Outcomes (MEEP)",
         "tech_stack": ["Flask", "React", "Docker", "Postgres"],
         "github_repositories": [
-          "https://github.com/codeforkansascity/meep",
-          "https://github.com/codeforkansascity/meep-backend"
+          {
+            "name": "codeforkansascity/meep",
+            "href": "https://github.com/codeforkansascity/meep"
+          },
+          {
+            "name": "codeforkansascity/meep-backend",
+            "href": "https://github.com/codeforkansascity/meep-backend"
+          }
         ],
         "location": "Kansas City, MO",
         "start_date": "1/2019",
@@ -116,8 +122,15 @@
         "graduation_date": "12/2017"
       }
     ],
-    "Awards & Recognition": [
-
+    "awards": [
+      {
+        "award": "Graduated summa cum laude",
+        "year": 2014
+      },
+      {
+        "award": "Earl E. Ziegler Award in Mathematics",
+        "year": 2014
+      }
     ]
   },
   "fonts": [
