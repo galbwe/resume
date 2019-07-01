@@ -1,12 +1,18 @@
-<h1>{{ name }}</h1>
-<h2>{{ title }}</h2>
-<nav>
+<div class="header-box name-title">
+ <h1>{{ name }}</h1>
+ <h2>{{ title }}</h2>
+</div>
+<div class="header-box">
  <ul>
+  <li>{{ address }}</li>
   <li>{{ email }}</li>
   <li>{{ phone }}</li>
-  <li>{{ address }}</li>
-  <li><a href="{{ github_link }}">Github: {{ github_account }}</a></li>
-  <li><a href="{{ linkedin_link }}">LinkedIn: {{ linkedin_account}}</a></li>
-  <li> <a href="{{ twitter_link }}">Twitter: {{ twitter_handle}}</a></li>
  </ul>
-</nav>
+</div>
+<div class="header-box">
+ <ul>
+  <li><a href="{{ github_link }}">Github: {{ github_account }}</a></li>
+  <li><a href="{{ linkedin_link }}">LinkedIn: {{ linkedin_account }}</a></li>
+  <li> <a href="{{ twitter_link }}">Twitter: {{ twitter_handle }}</a></li>
+ </ul>
+</div>

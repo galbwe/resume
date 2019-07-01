@@ -16,5 +16,6 @@ class Head(Component):
             'github_account': github_account,
             'linkedin_link': linkedin_link,
             'linkedin_account': linkedin_account,
-            'twitter_handle': twitter_link
+            'twitter_link': twitter_link,
+            'twitter_handle': twitter_handle
         }

@@ -13,8 +13,6 @@ RUN mkdir /root/.fonts
 
 COPY src /src
 
-COPY config.json /src
-
 WORKDIR src
 
 RUN python fonts.py

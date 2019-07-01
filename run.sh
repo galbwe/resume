@@ -1,8 +1,6 @@
 #!/bin/bash
-docker container run --rm \
+docker container run --rm -it \
   -v $(pwd)/src:/src \
   --name resume \
   resume:latest \
-  python build.py;
-
-gnome-open src/build/resume.pdf
+  /bin/ash;

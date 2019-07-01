@@ -1,0 +1,18 @@
+#skills {
+  order: 2;
+  background-color: var(--main-background-color, white);
+}
+
+.skills-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.skill {
+  text-align: center;
+
+  background: var(--section-background-color);
+  color: var(--section-text-color);
+  margin: 2px;
+  border-radius: 10%;
+}
