@@ -1,36 +1,36 @@
 <body>
 
- <header id="main-header">
+ <header class="main-header">
   {% if resume.head %}
    {{ resume.head.render()|safe }}
   {% endif %}
  </header>
 
- <section id="experience">
+ <section class="experience">
   {% if resume.experience %}
    {{ resume.experience.render()|safe }}
   {% endif %}
  </section>
 
- <section id="skills">
+ <section class="skills">
   {% if resume.skills %}
    {{ resume.skills.render()|safe }}
   {% endif %}
  </section>
 
- <section id="projects">
+ <section class="projects">
   {% if resume.projects %}
    {{ resume.projects.render()|safe }}
   {% endif %}
  </section>
 
- <section id="education">
+ <section class="education">
   {% if resume.education %}
    {{ resume.education.render()|safe }}
   {% endif %}
  </section>
 
-<section id="awards">
+<section class="awards">
   {% if resume.awards %}
    {{ resume.awards.render()|safe }}
   {% endif %}

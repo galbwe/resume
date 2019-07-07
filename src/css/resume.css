@@ -1,12 +1,12 @@
-@page {
+ @page {
   size: A3;
-  margin: 0cm;
+  margin: 2cm;
 }
-
+/*
 :root {
   --main-background-color: #f2f3f5;
   --text-color: #141414;
-  --section-background-color: #053075;
+  --section-background-color: gray;
   --section-text-color: #f2f3f5;
 }
 
@@ -16,6 +16,11 @@ body {
 
   display: flex;
   flex-direction: column;
+
+}
+
+body * {
+  border: 2px solid black;
 }
 
 ul {
@@ -29,4 +34,4 @@ header {
 
 section {
   flex: 1 1 300px;
-}
+} */

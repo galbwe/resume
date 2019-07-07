@@ -1,6 +1,7 @@
 from functools import partial
 import json
 import os
+import sys
 
 from jinja2 import Environment, FunctionLoader, select_autoescape
 from weasyprint import HTML, CSS
@@ -54,8 +55,7 @@ def parse_config(file="config.json"):
     return Resume(head, experience, skills, projects, education, awards)
 
 
-def get_html(resume, html_path='./html'):
-
+def get_template(resume, html_path='./html'):
     def load_template(name):
         if name in (f for f in os.listdir(html_path)):
             return open(os.path.join(html_path, name)).read()
@@ -69,6 +69,9 @@ def get_html(resume, html_path='./html'):
 
     # render jinja2 template
     template = env.get_template('resume.html')
+    return template
+
+def get_weasyprint_html(template):
     return HTML(string=template.render(resume=resume))
 
 
@@ -83,12 +86,54 @@ def get_stylesheets(font_config, css_path='./css'):
     return stylesheets
 
 
-def main(config='config.json', build='./build/resume.pdf'):
+def build_pdf(config='config.json', build='./build/resume.pdf'):
     font_config = FontConfiguration()
     resume = parse_config(config)
     html = get_html(resume)
     stylesheets = get_stylesheets(font_config)
     html.write_pdf(build, stylesheets=stylesheets, font_config=font_config)
 
+
+def get_css_filenames(css_dir='./css'):
+    filenames = []
+    for filename in os.listdir(css_dir):
+        if filename.split('.')[-1] == 'css':
+            filenames.append(filename)
+    return filenames
+
+
+def create_link(filename):
+    return f'<link rel="stylesheet" href="../css/{filename}.css">'
+
+
+def build_html(config='config.json', build='./build/resume.html'):
+    resume = parse_config(config)
+    template = get_template(resume)
+    # get links to css
+    _, _, filenames = next(os.walk('./css'))
+    filenames = [f for f in filenames if f.endswith('.css')]
+    links = [create_link(filename) for filename in filenames]
+    body = template.render(resume=resume)
+    html = '''
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+     <head>
+      <meta charset="utf-8">
+      {links}
+      <title>Resume</title>
+     </head>
+      {body}
+
+    </html>
+    '''.format(links='\n'.join(links), body=body)
+    with open(build, 'w') as f:
+        f.write(html)
+
 if __name__ == '__main__':
-    main()
+    mode = sys.argv[1]
+    if mode == 'pdf':
+        build_pdf()
+    elif mode == 'html':
+        build_html()
+    else:
+        print('Yo! You need to specify a development mode!')
