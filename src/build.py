@@ -103,7 +103,7 @@ def get_css_filenames(css_dir='./css'):
 
 
 def create_link(filename):
-    return f'<link rel="stylesheet" href="../css/{filename}.css">'
+    return f'<link rel="stylesheet" href="../css/{filename}">'
 
 
 def build_html(config='config.json', build='./build/resume.html'):

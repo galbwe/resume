@@ -2,36 +2,27 @@
   size: A3;
   margin: 2cm;
 }
-/*
+
 :root {
   --main-background-color: #f2f3f5;
   --text-color: #141414;
-  --section-background-color: gray;
-  --section-text-color: #f2f3f5;
+  --header-background-color: blue;
+  --header-text-color: white;
+  --header-text-shadow-color: black;
+  --secondary-color: red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: 'Lora', serif;
   background-color: var(--main-background-color, white);
 
-  display: flex;
-  flex-direction: column;
-
-}
-
-body * {
-  border: 2px solid black;
 }
 
 ul {
   list-style: none;
 }
-
-header {
-  flex: 0 0 300px;
-  order: 1;
-}
-
-section {
-  flex: 1 1 300px;
-} */
