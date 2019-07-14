@@ -1,18 +1,32 @@
-<div class="header-box main-title">
- <h1>{{ name }}</h1>
- <h2>{{ title }}</h2>
-</div>
-<div class="header-box">
- <ul>
-  <li>{{ address }}</li>
-  <li>{{ email }}</li>
-  <li>{{ phone }}</li>
- </ul>
-</div>
-<div class="header-box">
- <ul>
-  <li><a href="{{ github_link }}">Github: {{ github_account }}</a></li>
-  <li><a href="{{ linkedin_link }}">LinkedIn: {{ linkedin_account }}</a></li>
-  <li> <a href="{{ twitter_link }}">Twitter: {{ twitter_handle }}</a></li>
- </ul>
-</div>
+<section class="header-box main-title">
+ <div class="name">
+  {{ name }}
+ </div>
+ <div class="title">
+  {{ title }}
+ </div>
+</section>
+
+<section class="header-box contact">
+ <div class="contact-info address">
+  {{ address }}
+ </div>
+ <div class="contact-info email">
+  {{ email }}
+ </div>
+ <div class="contact-info phone">
+  {{ phone }}
+ </div>
+</section>
+
+<section class="header-box social-media">
+ <div class="github">
+  <a href="{{ github_link }}">Github: {{ github_account }}</a>
+ </div>
+ <div class="linkedin">
+  <a href="{{ linkedin_link }}">LinkedIn: {{ linkedin_account }}</a>
+ </div>
+ <div class="twitter">
+  <a href="{{ twitter_link }}">Twitter: {{ twitter_handle }}</a>
+ </div>
+</section>

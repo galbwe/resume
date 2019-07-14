@@ -1,0 +1,16 @@
+article.summary {
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "header"
+  "body";
+}
+
+.section-header {
+  grid-area: header;
+}
+
+.section-body {
+  grid-area: body;
+}

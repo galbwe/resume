@@ -71,7 +71,7 @@ def get_template(resume, html_path='./html'):
     template = env.get_template('resume.html')
     return template
 
-def get_weasyprint_html(template):
+def get_weasyprint_html(template, resume):
     return HTML(string=template.render(resume=resume))
 
 
@@ -89,7 +89,8 @@ def get_stylesheets(font_config, css_path='./css'):
 def build_pdf(config='config.json', build='./build/resume.pdf'):
     font_config = FontConfiguration()
     resume = parse_config(config)
-    html = get_html(resume)
+    template = get_template(resume)
+    html = get_weasyprint_html(template, resume)
     stylesheets = get_stylesheets(font_config)
     html.write_pdf(build, stylesheets=stylesheets, font_config=font_config)
 

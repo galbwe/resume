@@ -8,15 +8,15 @@
   border-bottom: 20px solid var(--secondary-color);
 }
 
-.main-header h1 {
+.main-header .name {
   font-size: 60px;
 }
 
-.main-header h2 {
+.main-header .title {
   font-size: 30px;
 }
 
-.main-header h1,h2 {
+.main-header .name, .title {
   letter-spacing: 0.05em;
 }
 

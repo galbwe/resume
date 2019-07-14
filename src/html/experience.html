@@ -1,4 +1,8 @@
-<h2>Work Experience</h2>
-{% for job in jobs %}
- {{ job.render()|safe }}
-{% endfor %}
+<header class="section-header">
+ <h1>Work Experience</h1>
+</header>
+<div class="section-body">
+ {% for job in jobs %}
+  {{ job.render()|safe }}
+ {% endfor %}
+</div>

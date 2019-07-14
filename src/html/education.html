@@ -1,4 +1,8 @@
-<h2>Education</h2>
-{% for degree in degrees %}
- {{ degree.render()|safe }}
-{% endfor %}
+<header class="section-header">
+ <h2>Education</h2>
+</header>
+<div class="section-body">
+ {% for degree in degrees %}
+  {{ degree.render()|safe }}
+ {% endfor %}
+</div>
