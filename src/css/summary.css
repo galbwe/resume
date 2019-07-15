@@ -1,16 +1,12 @@
 article.summary {
-  display: grid;
-  grid-template-rows: 1fr 5fr;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-  "header"
-  "body";
+  display: flex;
+  flex-direction: column;
 }
 
 .section-header {
-  grid-area: header;
+  flex: 1 1 50px;
 }
 
 .section-body {
-  grid-area: body;
+  flex: 5 1 auto;
 }

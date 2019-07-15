@@ -1,8 +1,3 @@
-#skills {
-  order: 2;
-  background-color: var(--main-background-color, white);
-}
-
 .skills-list {
   display: flex;
   flex-flow: row wrap;

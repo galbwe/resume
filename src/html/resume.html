@@ -1,55 +1,59 @@
 <body>
-<div class="grid-container">
+<div class="flex-container">
  <header class="main-header">
   {% if resume.head %}
    {{ resume.head.render()|safe }}
   {% endif %}
  </header>
+ <div class="content">
+  <div class="left-column">
+   <article class="summary main-section">
+    <header class="section-header">
+      <h1>Summary</h1>
+    </header>
+    <div class="section-body">
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+       velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+       est laborum.</p>
+    </div>
+   </article>
 
- <article class="summary main-section">
-  <header class="section-header">
-    <h1>Summary</h1>
-  </header>
-  <div class="section-body">
-   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-     veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-     commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-     velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-     est laborum.</p>
+   <section class="skills main-section">
+    {% if resume.skills %}
+     {{ resume.skills.render()|safe }}
+    {% endif %}
+   </section>
+
+   <section class="education main-section">
+    {% if resume.education %}
+     {{ resume.education.render()|safe }}
+    {% endif %}
+   </section>
+
+   <section class="awards main-section">
+     {% if resume.awards %}
+      {{ resume.awards.render()|safe }}
+     {% endif %}
+   </section>
   </div>
- </article>
 
- <section class="experience main-section">
-  {% if resume.experience %}
-   {{ resume.experience.render()|safe }}
-  {% endif %}
- </section>
+  <div class="right-column">
+   <section class="experience main-section">
+    {% if resume.experience %}
+     {{ resume.experience.render()|safe }}
+    {% endif %}
+   </section>
 
- <section class="skills main-section">
-  {% if resume.skills %}
-   {{ resume.skills.render()|safe }}
-  {% endif %}
- </section>
-
- <section class="projects main-section">
-  {% if resume.projects %}
-   {{ resume.projects.render()|safe }}
-  {% endif %}
- </section>
-
- <section class="education main-section">
-  {% if resume.education %}
-   {{ resume.education.render()|safe }}
-  {% endif %}
- </section>
-
-<section class="awards main-section">
-  {% if resume.awards %}
-   {{ resume.awards.render()|safe }}
-  {% endif %}
-</section>
-
-</div>
+   <section class="projects main-section">
+    {% if resume.projects %}
+     {{ resume.projects.render()|safe }}
+    {% endif %}
+   </section>
+  </div>
+ </div>
+ </div>
 </body>

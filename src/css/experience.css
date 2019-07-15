@@ -1,35 +1,8 @@
 .experience.section-body {
   display: flex;
   flex-direction: column;
-
-
 }
 
 .job {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr minmax(1fr, auto);
-  grid-template-areas:
-  "title company location dates"
-  "detail detail detail detail";
-}
-
-.job h3 {
-  grid-area: title;
-}
-
-.job .company {
-  grid-area: company;
-}
-
-.job .location {
-  grid-area: location;
-}
-
-.job .dates {
-  grid-area: dates;
-}
-
-.job .job-details{
-  grid-area: detail;
+  display: flex;
 }

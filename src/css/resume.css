@@ -1,17 +1,13 @@
  @page {
-  size: A3;
-  margin: 2cm;
+  size: A2;
+  margin: 1.5cm;
 }
 
 :root {
-  --main-background-color: #f2f3f5;
-  --text-color: #141414;
-  --header-background-color: blue;
-  --header-text-color: white;
-  --header-text-shadow-color: black;
-  --secondary-color: red;
-  --section-background-color: lightgray;
-  --section-text-color: black;
+  --main-background-color: white;;
+  --text-color: black;
+  --header-background-color: white;
+  --header-text-color: black;
 }
 
 * {
@@ -37,7 +33,6 @@ ul {
 .section-header {
   background: var(--header-background-color);
   color: var(--header-text-color);
-  text-shadow: 2px 2px black;
   width: 100%;
   min-height: 75px;
   font-size: 26px;
@@ -53,48 +48,28 @@ ul {
   width: 100%;
 }
 
-
 /* layout*/
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 5px;
-  grid-template-areas:
-  "header header header"
-  "summary experience experience"
-  "summary experience experience"
-  "skills experience experience"
-  "skills projects projects"
-  "education projects projects"
-  "education projects projects"
-  "awards awards awards";
+.flex-container {
+  display: flex;
+  flex-direction: column;
 }
 
-header {
-  grid-area: header;
+.main-header {
+  flex: 1 1 175px;
 }
 
-.summary {
-  grid-area: summary;
+.content {
+  flex: 10 1 auto;
+
+  display: flex;
+  flex-direction: row;
 }
 
-.experience {
-  grid-area: experience;
+.left-column {
+
+  flex: 1 1 33%;
 }
 
-.skills {
-  grid-area: skills;
-}
-
-.projects {
-  grid-area: projects;
-}
-
-.education {
-  grid-area: education;
-}
-
-.awards {
-  grid-area: awards;
+.right-column {
+  flex: 1 1 66%;
 }
